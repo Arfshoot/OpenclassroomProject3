@@ -1,0 +1,17 @@
+{
+  "name": "vigier_jeremy_1_dossier-complet-p3_052022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./sass/style.scss:./css/style.css -w --style compressed",
+    "prefix": "postcss . /css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserlist": "last 4 versions",
+  "devDependencies": {
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0"
+  }
+}
