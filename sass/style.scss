@@ -2,12 +2,19 @@
 @import "libs/mixins.scss";
 @import "libs/page.scss";
 
+/*police*/
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 *{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     max-width: 992px;
+}
+.font1 { 
+    font-family: 'Shrikhand';
+    font-weight: 400;
 }
 body {
     width: 100%;
@@ -21,21 +28,24 @@ header {
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    img{
+        padding-top: 2rem;
+    }
     .recherche{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
         background-color:$color-background; 
         width: 100%;
         text-decoration: none;
         color:$color-primarytext;
-        box-shadow: inset 0 0.5rem  grey;
+        box-shadow: inset 0 0.1rem 0.2rem rgb(141, 140, 140);
         margin-top:1rem;
+        padding:1rem;
         p {
-            padding-left: 10px; 
+            padding-left: 1rem; 
             font-size: 1em;
-            margin-top:1rem;
+            font-weight: 500;
         }
     }
 }
@@ -48,23 +58,31 @@ header {
     font-size: 1.1em;
     text-align:center;
     h1{
-        margin-left: 1rem;
-        margin-right: 1rem;
+        width: 70%;
+        font-size:1.4em;
         font-weight:bold;
-        margin-bottom: 0.4rem;
-        margin-top:1rem;
+        padding-top: 2rem;
+;
     }
     p {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        margin-top:1rem;
+        padding: 1rem;
+        padding-top: 0.8rem;
+        font-weight: lighter;
+
     }
 }
-.button {
-    @include bouton 
+.button{
+    
+    @include bouton;
+    background:$bacgroud-color-button;
+
 }
-.fonctionnement {
-    margin:1rem;
+.button:hover{
+    @extend %scalebutton;
+}
+.fonctionnement h1{
+    padding:0.8rem;
+    padding-top:2rem;
 }
 .cartouche {
     @include cartouche;
@@ -75,8 +93,8 @@ header {
 .list-resto{
     background: $color-background2;
     margin-top:3rem;
-    padding-left: 0.7rem;
-    padding-right:0.7rem ;
+    padding-left: 1rem;
+    padding-right:1rem ;
     padding-bottom:3rem;
     h1{
         padding-top: 3rem;

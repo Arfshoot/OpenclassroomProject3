@@ -1,3 +1,15 @@
+/*variable*/
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+.button:hover {
+  transform: scale(1.2, 1.2);
+  animation-timing-function: cubic-bezier(0.81, 0.02, 0.69, 1);
+  box-shadow: 1rem 1rem 1rem #bdbdbd;
+  background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
+  opacity: 0.7;
+  transition: opacity 350ms;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -17,7 +29,7 @@
 
 .menu {
   position: relative;
-  background: #d4d3d3;
+  background: #f6f6f6;
   border-radius: 2rem 2rem 0rem 0rem;
 }
 .menu .title {
@@ -71,22 +83,31 @@
 .bouton-place .button {
   width: 50%;
   background: #9356DC;
-  border: 1px solid #9356DC;
+  border: none;
+  box-shadow: 0.6rem 0.6rem 1rem #bdbdbd;
   border-radius: 40px;
   color: white;
-  padding: 1.2rem;
+  padding: 1rem;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 0.9em;
   margin-bottom: 3rem;
   margin-top: 1rem;
+  font-weight: inherit;
+  transition: transform 350ms;
 }
 
+/*police*/
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   max-width: 992px;
+}
+
+.font1 {
+  font-family: "Shrikhand";
+  font-weight: 400;
 }
 
 body {
@@ -102,26 +123,29 @@ header {
   justify-content: center;
   align-items: center;
 }
+header img {
+  padding-top: 2rem;
+}
 header .recherche {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  background-color: #bdbcbc;
+  background-color: #eaeaea;
   width: 100%;
   text-decoration: none;
   color: black;
-  box-shadow: inset 0 0.5rem grey;
+  box-shadow: inset 0 0.1rem 0.2rem rgb(141, 140, 140);
   margin-top: 1rem;
+  padding: 1rem;
 }
 header .recherche p {
-  padding-left: 10px;
+  padding-left: 1rem;
   font-size: 1em;
-  margin-top: 1rem;
+  font-weight: 500;
 }
 
 .intro {
-  background: #d4d3d3;
+  background: #f6f6f6;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -130,47 +154,50 @@ header .recherche p {
   text-align: center;
 }
 .intro h1 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  width: 70%;
+  font-size: 1.4em;
   font-weight: bold;
-  margin-bottom: 0.4rem;
-  margin-top: 1rem;
+  padding-top: 2rem;
 }
 .intro p {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  padding: 1rem;
+  padding-top: 0.8rem;
+  font-weight: lighter;
 }
 
 .button {
   background: #9356DC;
-  border: 1px solid #9356DC;
+  border: none;
+  box-shadow: 0.6rem 0.6rem 1rem #bdbdbd;
   border-radius: 40px;
   color: white;
-  padding: 1.2rem;
+  padding: 1rem;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 0.9em;
   margin-bottom: 3rem;
   margin-top: 1rem;
+  font-weight: inherit;
+  transition: transform 350ms;
+  background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
 }
 
-.fonctionnement {
-  margin: 1rem;
+.fonctionnement h1 {
+  padding: 0.8rem;
+  padding-top: 2rem;
 }
 
 .cartouche {
-  background-color: #d4d3d3;
+  background: #f6f6f6;
   border-radius: 1rem;
-  padding: 1rem;
-  margin: 0.5rem;
-  font-size: 1.2rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  font-size: 1em;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   box-shadow: 0 0.3rem 1rem #bdbdbd;
-  transition: background-color 250ms;
-  margin-bottom: 1rem;
 }
 .cartouche .card-logo {
   color: #7e7e7e;
@@ -182,19 +209,20 @@ header .recherche p {
   border-radius: 100%;
   color: white;
   position: absolute;
-  left: -4%;
-  padding: 0.4rem;
-  height: 1rem;
-  width: 1rem;
-  text-align: center;
-  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -3%;
+  height: 1.4rem;
+  width: 1.4rem;
+  font-size: 0.8em;
 }
 
 .list-resto {
-  background: #d4d3d3;
+  background: #f6f6f6;
   margin-top: 3rem;
-  padding-left: 0.7rem;
-  padding-right: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 3rem;
 }
 .list-resto h1 {
@@ -206,6 +234,7 @@ header .recherche p {
   width: 100%;
   border-radius: 30px;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   overflow: hidden;
 }
 .list-resto .card-resto a {
@@ -235,9 +264,6 @@ header .recherche p {
   bottom: 20%;
   right: 15%;
 }
-.list-resto .card-resto .coeur :hover {
-  color: #9356DC;
-}
 
 .card-resto2 {
   position: relative;
@@ -245,6 +271,7 @@ header .recherche p {
   width: 100%;
   border-radius: 30px;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   overflow: hidden;
 }
 .card-resto2 a {
@@ -264,9 +291,6 @@ header .recherche p {
   bottom: 20%;
   right: 15%;
 }
-.card-resto2 .coeur :hover {
-  color: #9356DC;
-}
 
 .desc {
   color: black;
@@ -276,11 +300,11 @@ header .recherche p {
   margin-top: 1rem;
   margin-bottom: 0.7rem;
   padding-left: 0.7rem;
-  font-size: 1.1em;
 }
 .desc h2 {
   padding-bottom: 0.3rem;
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 /* pk la mixin ne veux pas ?*/
@@ -290,6 +314,7 @@ header .recherche p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 0.7rem;
 }
 .foot h3 {
   padding: 0.5rem;
