@@ -1,3 +1,4 @@
+/* style bouton*/
 @mixin bouton{
     
     background: $color-primary;
@@ -15,7 +16,7 @@
     
    
 }
-
+/*liste page acceuil*/
 @mixin cartouche {
     
     background: $color-background2;
@@ -53,7 +54,7 @@
     font-size:0.8em;
     
 }
-
+/* menu page d'acceuil*/
 @mixin card-resto {
     position: relative;
     background: white;
@@ -109,11 +110,18 @@
         position: absolute;
         bottom: 20%;
         right: 15%;
+        font-weight: bold;
+        .fa-heart:hover{
+            font-weight: bold;
+            color:$color-primary;
+            transition: color 1s ease-out;
+            
+        }
 
     }
 }
 
-
+/*style footer*/
 @mixin foot {
     .foot{
         background:rgb(34, 34, 34);

@@ -1,6 +1,7 @@
 @import "libs/composants.scss";
 @import "libs/mixins.scss";
 @import "libs/page.scss";
+@import "libs/loader.scss";
 
 /*police*/
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -86,10 +87,18 @@ header {
 }
 .cartouche {
     @include cartouche;
+
     .num {
         @include numero;
     }
 }
+.cartouche:hover{
+    @extend %backpurple;
+    .card-logo{
+        @extend %backpurplelogo;
+    }
+}
+
 .list-resto{
     background: $color-background2;
     margin-top:3rem;
@@ -105,6 +114,10 @@ header {
         @include coeur;
     }
 }
+.coeur:hover{
+    color: red;
+    background-color:red;
+}
 .card-resto2{
     @include card-resto;
     @include coeur; 
@@ -114,6 +127,5 @@ header {
 }
 
 
-/* pk la mixin ne veux pas ?*/
-    @include foot;
+@include foot;
  

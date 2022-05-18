@@ -1,6 +1,21 @@
 @import "mixins.scss";
+@import "composants.scss";
 
-
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 992px;
+}
+.font1 { 
+    font-family: 'Shrikhand';
+    font-weight: 400;
+}
+body {
+    width: 100%;
+}
+/*header+img*/
 
 .header {
     display: flex;
@@ -14,70 +29,107 @@
         font-size: 1.5em;
         
     }    
+    .logo {
+        padding-top:0;
+    }
+
 }
 .imgplat{
     width: 100%;
+    object-fit: cover;
+    position:relative;
+    
+    
 }
+/*mise en page du menu*/
 .menu{
-    position: relative;
+    position:absolute;
+    top:35%;
+    width: 100%;
     background: $color-background2;
     border-radius: 2rem 2rem 0rem 0rem;
+    padding-top:2rem;
 
     .title{
-        position: relative;
-        width: 100%;
-        display:flex;
-        flex-direction: row;
-
         h1{
-            padding: 0.6rem;
-            padding-top:1rem;
+            font-size: 1.5em;
+            padding-left: 1rem;
         }
-
         .coeurpage{
             position: absolute;
-            right: 5%;
-            top: 5%;
-            padding: 0.6rem;
-            padding-top:1rem;
+            right: 15%;
+            top: 4%;
+            font-size:1.5em;
         }
     } 
 }
 
 .menu-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
     h2 {
-        padding: 0.6rem;
+        padding: 1rem;
         padding-top:1rem;
-        font-size:1.2em;
+        font-size:1em;
+        font-weight:200;
     }
+    h4{
+        @extend %titremenusouligne;
+    }
+
+
     .menu-desc{
+        
         position: relative;
-        margin: 0.5rem;
-        padding: 0.6rem;
+        width:90%;
+        padding: 0.5rem;
         background:white;
         border-radius:1rem;
-        display: flex;
+        margin: 1rem;
+        margin-bottom:0.5rem;
+        padding-bottom: 0;
+        box-shadow: 0 0.3rem 1rem #bdbdbd;
+
+
+
         .price{
             position: absolute;
             bottom: 7%;
             right: 5%;
         }
         h3{  
-            font-size:0.9em;
+            font-size:1em;
         }
-        p{font-size:0.6em;
+        p{
+            font-size:1em;
+            font-weight:lighter;
+            padding-top:0.5rem;
+            padding-bottom: 0.5rem;
         }
     }
 }
 .bouton-place{
+    position: relative;
     display:flex;
     flex-direction: row;
     justify-content:center;
+    align-items: center;
     .button{
         width: 50%;
         @include bouton;
+        background:$bacgroud-color-button;
+        margin-top:2rem;
+ 
+    }
+    .button:hover{
+        @extend %scalebutton;
     }
 }
+
+@include foot
+
 
  
   
