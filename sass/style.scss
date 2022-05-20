@@ -78,9 +78,7 @@ header {
     background:$bacgroud-color-button;
 
 }
-.button:hover{
-    @extend %scalebutton;
-}
+
 .fonctionnement h1{
     padding:0.8rem;
     padding-top:2rem;

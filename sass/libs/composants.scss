@@ -13,15 +13,6 @@ $bacgroud-color-button: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da
 
 
 /*variable*/
-%scalebutton{
-    transform:scale(1.2,1.2);
-    animation-timing-function:cubic-bezier(.81,.02,.69,1);
-    box-shadow: 1rem 1rem 1rem #bdbdbd;
-    background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
-    opacity: 0.7;
-    transition: opacity 350ms;
-    
-}
 
 %backpurple {
     background: #d0c0e4;

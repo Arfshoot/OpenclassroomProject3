@@ -2,15 +2,6 @@
 /*variable*/
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-.button:hover, .bouton-place .button:hover {
-  transform: scale(1.2, 1.2);
-  animation-timing-function: cubic-bezier(0.81, 0.02, 0.69, 1);
-  box-shadow: 1rem 1rem 1rem #bdbdbd;
-  background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
-  opacity: 0.7;
-  transition: opacity 350ms;
-}
-
 .cartouche:hover {
   background: #d0c0e4;
 }
@@ -35,15 +26,6 @@
 /*style footer*/
 /*couleurs*/
 /*variable*/
-.button:hover, .bouton-place .button:hover {
-  transform: scale(1.2, 1.2);
-  animation-timing-function: cubic-bezier(0.81, 0.02, 0.69, 1);
-  box-shadow: 1rem 1rem 1rem #bdbdbd;
-  background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
-  opacity: 0.7;
-  transition: opacity 350ms;
-}
-
 .cartouche:hover {
   background: #d0c0e4;
 }
@@ -92,16 +74,16 @@ body {
   padding-top: 0;
 }
 
+/*animation de la fleche*/
 .imgplat {
+  position: relative;
   width: 100%;
   object-fit: cover;
-  position: relative;
 }
 
 /*mise en page du menu*/
 .menu {
-  position: absolute;
-  top: 35%;
+  padding: 1rem;
   width: 100%;
   background: #f6f6f6;
   border-radius: 2rem 2rem 0rem 0rem;
@@ -114,47 +96,187 @@ body {
 .menu .title .coeurpage {
   position: absolute;
   right: 15%;
-  top: 4%;
+  top: 45%;
   font-size: 1.5em;
+}
+.menu .title .coeurpage .fa-heart:hover {
+  font-weight: bold;
+  color: #9356DC;
+  transition: color 1s ease-out;
 }
 
 .menu-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 .menu-card h2 {
   padding: 1rem;
   padding-top: 1rem;
   font-size: 1em;
   font-weight: 200;
+  padding-bottom: 0.2rem;
+}
+.menu-card .anim-title {
+  animation-name: appartion-title;
+  animation-duration: 1s;
+  animation-duration: 800ms;
+}
+@keyframes appartion-title {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .menu-card .menu-desc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
   position: relative;
-  width: 90%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   background: white;
   border-radius: 1rem;
   margin: 1rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0;
+  margin-bottom: 0;
   box-shadow: 0 0.3rem 1rem #bdbdbd;
 }
-.menu-card .menu-desc .price {
-  position: absolute;
-  bottom: 7%;
-  right: 5%;
+.menu-card h3 {
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.2rem;
 }
-.menu-card .menu-desc h3 {
-  font-size: 1em;
-}
-.menu-card .menu-desc p {
-  font-size: 1em;
+.menu-card p {
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
   font-weight: lighter;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+}
+.menu-card .price {
+  top: 1rem;
+  position: relative;
+  transform: translateX(0);
+  transition-property: transform;
+  transition-duration: 1000ms;
+}
+.menu-card .logo-check {
+  position: absolute;
+  bottom: 0%;
+  left: 100%;
+  color: white;
+  font-size: 1.7em;
+  background-color: #99e2d0;
+  padding: 1.1rem;
+  text-align: flex-start;
+  width: 75px;
+  transform: translateX(0);
+  transition-property: transform;
+  transition-duration: 1000ms;
+}
+.menu-card .logo-check i {
+  transform: rotate(0);
+  transition-property: transform;
+  transition-duration: 1000ms;
 }
 
+/* Appartion du menu */
+.animation1, .animation2, .animation3 {
+  position: relative;
+  animation-name: apparition;
+  animation-duration: 1200ms;
+  animation-delay: 150ms;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation2 {
+  animation-name: apparition2;
+  animation-duration: 1200ms;
+  animation-delay: 300ms;
+}
+
+@keyframes apparition2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation3 {
+  animation-name: apparition3;
+  animation-duration: 1200ms;
+  animation-delay: 450ms;
+}
+
+@keyframes apparition3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*Validation*/
+.animation1:hover {
+  cursor: pointer;
+}
+.animation1:hover .price {
+  transform: translateX(-70px);
+}
+.animation1:hover .logo-check {
+  transform: translateX(-70px);
+}
+.animation1:hover .logo-check i {
+  transform: rotate(-1turn);
+}
+
+.animation2:hover {
+  cursor: pointer;
+}
+.animation2:hover .price {
+  transform: translateX(-60px);
+}
+.animation2:hover .logo-check {
+  transform: translateX(-60px);
+}
+.animation2:hover .logo-check i {
+  transform: rotate(-1turn);
+}
+
+.animation3:hover {
+  cursor: pointer;
+}
+.animation3:hover .price {
+  transform: translateX(-60px);
+}
+.animation3:hover .logo-check {
+  transform: translateX(-60px);
+}
+.animation3:hover .logo-check i {
+  transform: rotate(-1turn);
+}
+
+.menu-card:hover + .check {
+  transform: translateX(-200px);
+}
+
+/*boutton*/
 .bouton-place {
   position: relative;
   display: flex;
@@ -162,7 +284,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.bouton-place .button {
+.bouton-place__button {
   width: 50%;
   background: #9356DC;
   border: none;
@@ -175,10 +297,20 @@ body {
   margin-bottom: 3rem;
   margin-top: 1rem;
   font-weight: inherit;
-  transition: transform 350ms;
+  cursor: pointer;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 1000ms;
   background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
   margin-top: 2rem;
 }
+.bouton-place__button:hover {
+  transform: scale(1.4);
+  opacity: 0.7;
+  box-shadow: 1rem 1rem 1rem #bdbdbd;
+  background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
+}
+
 .foot {
   background: rgb(34, 34, 34);
   color: white;
@@ -339,7 +471,16 @@ header .recherche p {
   margin-bottom: 3rem;
   margin-top: 1rem;
   font-weight: inherit;
-  transition: transform 350ms;
+  cursor: pointer;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 1000ms;
+  background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
+}
+.button:hover {
+  transform: scale(1.4);
+  opacity: 0.7;
+  box-shadow: 1rem 1rem 1rem #bdbdbd;
   background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
 }
 
