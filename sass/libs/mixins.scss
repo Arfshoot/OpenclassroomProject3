@@ -15,9 +15,9 @@
     cursor: pointer;
     transform: scale(1);
     transition-property: transform;
-    transition-duration:1000ms;
+    transition-duration:800ms;
     &:hover{
-        transform: scale(1.4);
+        transform: scale(1.2);
         opacity: 0.7;
         box-shadow: 1rem 1rem 1rem #bdbdbd;
         background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
@@ -28,7 +28,7 @@
 }
 /*liste page acceuil*/
 @mixin cartouche {
-    
+    cursor: pointer;
     background: $color-background2;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -69,7 +69,7 @@
     position: relative;
     background: white;
     width: 100%;
-    border-radius:30px;
+    border-radius:10px;
     margin-top:1rem;
     margin-bottom:1rem;
     overflow: hidden;
@@ -77,22 +77,41 @@
         text-decoration: none;
     } 
     img{
-        object-fit: cover;
+        object-fit:cover;
         max-width: 992px;
         height: 200px;
         width: 100%;
         border-radius:20px 20px 0 0;
     }
+    figcaption {
+        color: $color-primarytext;
+        padding: 0.5rem;
+        h2{
+            font-size:1.2em;
+            padding:0.2rem;
+        }
+        p{
+            padding-bottom: 0.6rem;
+        }
+
+    }
 }
 
-@mixin desc-card {
-    color: black;
+
+/* carte menu mise en page*/
+@mixin desc-card-page {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top:1rem;
-    margin-bottom: 0.7rem;
-    padding-left: 0.7rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    overflow: hidden;
+    position: relative;
+    padding: 0.6rem;
+    background:white;
+    border-radius:1rem;
+    margin: 1rem;
+    margin-bottom: 0;
+    box-shadow: 0 0.3rem 1rem #bdbdbd;
     
     h2{
         padding-bottom: 0.3rem;
@@ -115,43 +134,31 @@
 }
 @mixin coeur {
     .coeur{
-        font-size: 1.7em;
+        
+        font-size: 1.5em;
         color: rgb(0, 0, 0);
         position: absolute;
         bottom: 20%;
         right: 15%;
         font-weight: bold;
+        cursor: pointer;
         .fa-heart:hover{
             font-weight: bold;
             color:$color-primary;
-            transition: color 1s ease-out;
-            
+            transition: color 1s ease-out;  
         }
 
     }
 
 }
-@mixin coeur-page {
-    .coeurpage{
-        font-size: 1.7em;
-        color: rgb(255, 0, 0);
-        position: absolute;
-        bottom: 20%;
-        right: 15%;
-        font-weight: bold;
-        i:hover{
-            font-weight: bold;
-            color:$color-primary;
-            transition: color 1s ease-out;
-            
-        }
-    }
+
     
-}
+
 
 /*style footer*/
 @mixin foot {
     .foot{
+        
         background:rgb(34, 34, 34);
         color: white;
         display: flex;
@@ -168,9 +175,16 @@
             }
             padding-right:0.5rem;
         }
+        a{
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
         li {
+           list-style-type: none;
             padding-left: 0.5rem;
             padding-top: 0.3rem;
+
         }
     }  
 }

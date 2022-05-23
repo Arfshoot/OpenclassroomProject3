@@ -36,57 +36,74 @@ body {
 }
 
 /*animation de la fleche*/
+
+.fa-arrow-left{
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration:1500ms;
+
+}
+
+.fa-arrow-left:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+    color:$color-primary;
+    transition: color 1500ms ;
+ }
+
+
+
+
 .imgplat{
-    position:relative;
+    margin-bottom:-50px;
     width: 100%;
     object-fit:cover;
-
+    height: 260px;
+    overflow: hidden;
 }
 /*mise en page du menu*/
 .menu{
+    position: relative;
     padding:1rem;
     width: 100%;
     background: $color-background2;
     border-radius: 2rem 2rem 0rem 0rem;
     padding-top:2rem;
 
-    .title{
-        h1{
+    .title h1{
             font-size: 1.5em;
             padding-left: 1rem;
-        }
-        .coeurpage{
-            position: absolute;
-            right: 15%;
-            top: 45%;
-            font-size:1.5em;
-            .fa-heart:hover{
-                font-weight: bold;
-                color:$color-primary;
-                transition: color 1s ease-out;   
+            } 
+            .coeurpage{
+                cursor: pointer;
+                position: absolute;
+                top: 3%;
+                right:15%;   
+                font-size:1.5em;
+                .fa-heart:hover{
+                    font-weight: bold;
+                    color:$color-primary;
+                    transition: color 1s ease-out;
+                }
             }
-        }
-    } 
-}
+} 
 
+/* card menu avec animation*/
 .menu-card{
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
-    
-    
+
     h2 {
         padding: 1rem;
         padding-top:1rem;
         font-size:1em;
         font-weight:200;
         padding-bottom: 0.2rem;
-        &:after{
-            
-        }
-    }
-    h4{
+        
+}
+    h4 {
         @extend %titremenusouligne;
     }
 
@@ -101,48 +118,29 @@ body {
 }
 
 .menu-desc{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content:space-between;
-        overflow: hidden;
-        position: relative;
-        padding: 0.4rem;
-        background:white;
-        border-radius:1rem;
-        margin: 1rem;
-        margin-bottom: 0;
-        box-shadow: 0 0.3rem 1rem #bdbdbd;
-
+    @include desc-card-page; 
     }
     h3{  
-        overflow: hidden;
         position: relative;
+        overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
-        
         font-size:1.2rem;
-        
     }
     p{
+        
         overflow: hidden;
-        position: relative;
         text-overflow: ellipsis;
-        white-space: nowrap;
         font-size:1.0rem;
         font-weight:lighter;
-        padding-top:0.5rem;
-        padding-bottom: 0.2rem;
-        
+        padding-top:0.5rem;  
     }
     .price{
-        top:1rem;
-
-        position: relative;
+        top:2.7rem;
+        right:0.5rem;
+        position: absolute;
         transform: translateX(0);
         transition-property: transform;
-        transition-duration: 1000ms;
-
+        transition-duration: 600ms;
     } 
     .logo-check{
 
@@ -150,53 +148,57 @@ body {
         bottom:0%;
         left:100%;
         color:white;
-        font-size: 1.7em;
+        font-size: 1.8em;
         background-color:$color-tertiary;
-        padding: 1.1rem;
+        padding: 1.2rem;
         text-align: flex-start;
-        width:75px;
+        width:80px;
         transform: translateX(0);
         transition-property: transform;
-        transition-duration: 1000ms;
+        transition-duration: 600ms;
         i{
             transform: rotate(0);
             transition-property: transform;
-            transition-duration: 1000ms;
+            transition-duration: 600ms;
         }
     }
 }
-
 /* Appartion du menu */
-.animation1 , .animation2, .animation3{
-    position: relative;
+.animation1 {
     animation-name: apparition;
     animation-duration: 1200ms;
     animation-delay: 150ms;
-    
-
 }
 @keyframes apparition{
     0%{opacity: 0;}
     100%{opacity:1;}
 }
+
 .animation2{
     animation-name: apparition2;
     animation-duration: 1200ms;
     animation-delay: 300ms; 
-
 }
 @keyframes apparition2{
     0%{opacity: 0;}
     100%{opacity:1;}
 }
-.animation3{
-    
+
+.animation3{  
     animation-name: apparition3;
     animation-duration: 1200ms;
     animation-delay: 450ms; 
-
 }
 @keyframes apparition3{
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+.animation4 {
+    animation-name: apparition4;
+    animation-duration: 1500ms;
+    animation-delay: 600ms;
+}
+@keyframes apparition4{
     0%{opacity: 0;}
     100%{opacity:1;}
 }
@@ -212,7 +214,7 @@ body {
         .logo-check{
             transform: translateX(-70px);
         i{
-            transform: rotate(-1turn);
+            transform: rotate(1turn);
         }
     }
 }
@@ -220,33 +222,42 @@ body {
     cursor: pointer;
 
         .price{
-            transform: translateX(-60px);
+            transform: translateX(-70px);
         }
         .logo-check{
-            transform: translateX(-60px);
+            transform: translateX(-70px);
         i{
-            transform: rotate(-1turn);
+            transform: rotate(1turn);
         }
     }
 }.animation3:hover{ 
     cursor: pointer;
 
         .price{
-            transform: translateX(-60px);
+            transform: translateX(-70px);
         }
         .logo-check{
-            transform: translateX(-60px);
+            transform: translateX(-70px);
         i{
-            transform: rotate(-1turn);
+            transform: rotate(1turn);
+        }
+    }
+}
+.animation4:hover{ 
+    cursor: pointer;
+
+        .price{
+            transform: translateX(-70px);
+        }
+        .logo-check{
+            transform: translateX(-70px);
+        i{
+            transform: rotate(1turn);
         }
     }
 }
 
-.menu-card{
-    &:hover + .check{
-        transform: translateX(-200px);
-    }
-}
+
  
 /*boutton*/
 .bouton-place{

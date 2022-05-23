@@ -16,13 +16,16 @@
   margin-left: 1rem;
 }
 
+/*  if recette hover = width 90%  */
 /* style bouton*/
 /*liste page acceuil*/
 /* menu page d'acceuil*/
+/* carte menu mise en page*/
 /*style footer*/
 /* style bouton*/
 /*liste page acceuil*/
 /* menu page d'acceuil*/
+/* carte menu mise en page*/
 /*style footer*/
 /*couleurs*/
 /*variable*/
@@ -40,6 +43,7 @@
   margin-left: 1rem;
 }
 
+/*  if recette hover = width 90%  */
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -75,14 +79,30 @@ body {
 }
 
 /*animation de la fleche*/
+.fa-arrow-left {
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 1500ms;
+}
+
+.fa-arrow-left:hover {
+  transform: scale(1.2);
+  font-weight: bold;
+  color: #9356DC;
+  transition: color 1500ms;
+}
+
 .imgplat {
-  position: relative;
+  margin-bottom: -50px;
   width: 100%;
   object-fit: cover;
+  height: 260px;
+  overflow: hidden;
 }
 
 /*mise en page du menu*/
 .menu {
+  position: relative;
   padding: 1rem;
   width: 100%;
   background: #f6f6f6;
@@ -93,18 +113,20 @@ body {
   font-size: 1.5em;
   padding-left: 1rem;
 }
-.menu .title .coeurpage {
+.menu .coeurpage {
+  cursor: pointer;
   position: absolute;
+  top: 3%;
   right: 15%;
-  top: 45%;
   font-size: 1.5em;
 }
-.menu .title .coeurpage .fa-heart:hover {
+.menu .coeurpage .fa-heart:hover {
   font-weight: bold;
   color: #9356DC;
   transition: color 1s ease-out;
 }
 
+/* card menu avec animation*/
 .menu-card {
   display: flex;
   flex-direction: column;
@@ -137,60 +159,61 @@ body {
   justify-content: space-between;
   overflow: hidden;
   position: relative;
-  padding: 0.4rem;
+  padding: 0.6rem;
   background: white;
   border-radius: 1rem;
   margin: 1rem;
   margin-bottom: 0;
   box-shadow: 0 0.3rem 1rem #bdbdbd;
 }
+.menu-card .menu-desc h2 {
+  padding-bottom: 0.3rem;
+  font-weight: bold;
+  font-size: 1.2em;
+}
 .menu-card h3 {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   font-size: 1.2rem;
 }
 .menu-card p {
   overflow: hidden;
-  position: relative;
   text-overflow: ellipsis;
-  white-space: nowrap;
   font-size: 1rem;
   font-weight: lighter;
   padding-top: 0.5rem;
-  padding-bottom: 0.2rem;
 }
 .menu-card .price {
-  top: 1rem;
-  position: relative;
+  top: 2.7rem;
+  right: 0.5rem;
+  position: absolute;
   transform: translateX(0);
   transition-property: transform;
-  transition-duration: 1000ms;
+  transition-duration: 600ms;
 }
 .menu-card .logo-check {
   position: absolute;
   bottom: 0%;
   left: 100%;
   color: white;
-  font-size: 1.7em;
+  font-size: 1.8em;
   background-color: #99e2d0;
-  padding: 1.1rem;
+  padding: 1.2rem;
   text-align: flex-start;
-  width: 75px;
+  width: 80px;
   transform: translateX(0);
   transition-property: transform;
-  transition-duration: 1000ms;
+  transition-duration: 600ms;
 }
 .menu-card .logo-check i {
   transform: rotate(0);
   transition-property: transform;
-  transition-duration: 1000ms;
+  transition-duration: 600ms;
 }
 
 /* Appartion du menu */
-.animation1, .animation2, .animation3 {
-  position: relative;
+.animation1 {
   animation-name: apparition;
   animation-duration: 1200ms;
   animation-delay: 150ms;
@@ -232,6 +255,20 @@ body {
     opacity: 1;
   }
 }
+.animation4 {
+  animation-name: apparition4;
+  animation-duration: 1500ms;
+  animation-delay: 600ms;
+}
+
+@keyframes apparition4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*Validation*/
 .animation1:hover {
   cursor: pointer;
@@ -243,37 +280,46 @@ body {
   transform: translateX(-70px);
 }
 .animation1:hover .logo-check i {
-  transform: rotate(-1turn);
+  transform: rotate(1turn);
 }
 
 .animation2:hover {
   cursor: pointer;
 }
 .animation2:hover .price {
-  transform: translateX(-60px);
+  transform: translateX(-70px);
 }
 .animation2:hover .logo-check {
-  transform: translateX(-60px);
+  transform: translateX(-70px);
 }
 .animation2:hover .logo-check i {
-  transform: rotate(-1turn);
+  transform: rotate(1turn);
 }
 
 .animation3:hover {
   cursor: pointer;
 }
 .animation3:hover .price {
-  transform: translateX(-60px);
+  transform: translateX(-70px);
 }
 .animation3:hover .logo-check {
-  transform: translateX(-60px);
+  transform: translateX(-70px);
 }
 .animation3:hover .logo-check i {
-  transform: rotate(-1turn);
+  transform: rotate(1turn);
 }
 
-.menu-card:hover + .check {
-  transform: translateX(-200px);
+.animation4:hover {
+  cursor: pointer;
+}
+.animation4:hover .price {
+  transform: translateX(-70px);
+}
+.animation4:hover .logo-check {
+  transform: translateX(-70px);
+}
+.animation4:hover .logo-check i {
+  transform: rotate(1turn);
 }
 
 /*boutton*/
@@ -300,12 +346,12 @@ body {
   cursor: pointer;
   transform: scale(1);
   transition-property: transform;
-  transition-duration: 1000ms;
+  transition-duration: 800ms;
   background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
   margin-top: 2rem;
 }
 .bouton-place__button:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   opacity: 0.7;
   box-shadow: 1rem 1rem 1rem #bdbdbd;
   background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
@@ -328,7 +374,13 @@ body {
 .foot span .fa-utensils {
   width: 20px;
 }
+.foot a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
 .foot li {
+  list-style-type: none;
   padding-left: 0.5rem;
   padding-top: 0.3rem;
 }
@@ -336,7 +388,7 @@ body {
 .loading {
   width: 100%;
   height: 100vh;
-  background: #353535;
+  background: rgba(128, 124, 124, 0.2274509804);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -344,11 +396,13 @@ body {
 }
 
 @keyframes hidde-loader {
+  0% {
+    opacity: 1;
+  }
   50% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
-    visibility: hidden;
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -474,11 +528,11 @@ header .recherche p {
   cursor: pointer;
   transform: scale(1);
   transition-property: transform;
-  transition-duration: 1000ms;
+  transition-duration: 800ms;
   background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
 }
 .button:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   opacity: 0.7;
   box-shadow: 1rem 1rem 1rem #bdbdbd;
   background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
@@ -490,6 +544,7 @@ header .recherche p {
 }
 
 .cartouche {
+  cursor: pointer;
   background: #f6f6f6;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -535,7 +590,7 @@ header .recherche p {
   position: relative;
   background: white;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 10px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -550,6 +605,17 @@ header .recherche p {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
+.list-resto .card-resto figcaption {
+  color: black;
+  padding: 0.5rem;
+}
+.list-resto .card-resto figcaption h2 {
+  font-size: 1.2em;
+  padding: 0.2rem;
+}
+.list-resto .card-resto figcaption p {
+  padding-bottom: 0.6rem;
+}
 .list-resto .card-resto a .new {
   color: rgb(209, 22, 22);
   position: absolute;
@@ -561,12 +627,13 @@ header .recherche p {
   color: #278a71;
 }
 .list-resto .card-resto .coeur {
-  font-size: 1.7em;
+  font-size: 1.5em;
   color: rgb(0, 0, 0);
   position: absolute;
   bottom: 20%;
   right: 15%;
   font-weight: bold;
+  cursor: pointer;
 }
 .list-resto .card-resto .coeur .fa-heart:hover {
   font-weight: bold;
@@ -577,54 +644,6 @@ header .recherche p {
 .coeur:hover {
   color: red;
   background-color: red;
-}
-
-.card-resto2 {
-  position: relative;
-  background: white;
-  width: 100%;
-  border-radius: 30px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-.card-resto2 a {
-  text-decoration: none;
-}
-.card-resto2 img {
-  object-fit: cover;
-  max-width: 992px;
-  height: 200px;
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-}
-.card-resto2 .coeur {
-  font-size: 1.7em;
-  color: rgb(0, 0, 0);
-  position: absolute;
-  bottom: 20%;
-  right: 15%;
-  font-weight: bold;
-}
-.card-resto2 .coeur .fa-heart:hover {
-  font-weight: bold;
-  color: #9356DC;
-  transition: color 1s ease-out;
-}
-
-.desc {
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 0.7rem;
-  padding-left: 0.7rem;
-}
-.desc h2 {
-  padding-bottom: 0.3rem;
-  font-weight: bold;
-  font-size: 1.2em;
 }
 
 .foot {
@@ -644,7 +663,13 @@ header .recherche p {
 .foot span .fa-utensils {
   width: 20px;
 }
+.foot a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
 .foot li {
+  list-style-type: none;
   padding-left: 0.5rem;
   padding-top: 0.3rem;
 }

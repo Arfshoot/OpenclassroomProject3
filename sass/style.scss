@@ -116,13 +116,7 @@ header {
     color: red;
     background-color:red;
 }
-.card-resto2{
-    @include card-resto;
-    @include coeur; 
-}
-.desc {
-    @include desc-card;
-}
+
 
 
 @include foot;
