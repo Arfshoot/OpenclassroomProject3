@@ -2,6 +2,7 @@
 @import "libs/mixins.scss";
 @import "libs/page.scss";
 @import "libs/loader.scss";
+@import "libs/breakpoint.scss";
 
 /*police*/
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -12,6 +13,9 @@
     margin: 0;
     padding: 0;
     max-width: 992px;
+    @include desktop-only{
+        margin: auto; 
+    }
 }
 .font1 { 
     font-family: 'Shrikhand';
@@ -19,6 +23,7 @@
 }
 body {
     width: 100%;
+
 }
 
 header {
@@ -47,6 +52,15 @@ header {
             padding-left: 1rem; 
             font-size: 1em;
             font-weight: 500;
+            @include desktop-only
+            
+        }
+        @include desktop-only{
+            .fa-solid {
+                margin-right: 0.5rem;
+
+            }
+            p{ margin-left: 0.5rem;}
         }
     }
 }
@@ -78,10 +92,27 @@ header {
     background:$bacgroud-color-button;
 
 }
+/* Cartouche*/
+.fonctionnement{
+    @include desktop-only{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
 
+        
+    }
+}
 .fonctionnement h1{
     padding:0.8rem;
     padding-top:2rem;
+    @include desktop-only{
+        margin: 0.5rem;
+        font-size:1em;
+        
+    }
+
 }
 .cartouche {
     @include cartouche;
@@ -96,20 +127,47 @@ header {
         @extend %backpurplelogo;
     }
 }
-
+/* liste des 4 restaurants*/ 
 .list-resto{
     background: $color-background2;
     margin-top:3rem;
     padding-left: 1rem;
     padding-right:1rem ;
     padding-bottom:3rem;
+    @include desktop-only{
+        margin-top:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+    }
+    .placement{
+        @include desktop-only{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+    }
     h1{
         padding-top: 3rem;
+        @include desktop-only{
+            padding-top:1.5rem;
+        }
+
     }
     .card-resto{
         @include card-resto;
         @include new;
         @include coeur;
+        @include desktop-only{
+        &:hover{
+            transform: scale(1.1);
+            box-shadow: 0 0.3rem 1rem $color-primary;
+        }
+    }
+
+            
+        
     }
 }
 .coeur:hover{

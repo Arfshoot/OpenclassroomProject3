@@ -1,5 +1,6 @@
 @import "mixins.scss";
 @import "composants.scss";
+@import "breakpoint.scss";
 
 *{
     box-sizing: border-box;
@@ -23,17 +24,32 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding:2rem;
-    padding-bottom: 1.2rem;
+    padding-bottom: 1.2rem; 
+    @include desktop-only{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    a{
+        @include desktop-only{
+            margin: 0;
+        }
+    }   
     i {
         padding-right:3rem;
-        font-size: 1.5em;
-        
+        font-size: 1.5em;    
+        @include desktop-only{
+            padding-right:1rem;
+        }
     }    
     .logo {
         padding-top:0;
+        @include desktop-only{
+            margin:0;
+        }
     }
-
 }
+
 
 /*animation de la fleche*/
 
@@ -51,14 +67,11 @@ body {
     transition: color 1500ms ;
  }
 
-
-
-
 .imgplat{
-    margin-bottom:-50px;
+    margin-bottom:-30px;
     width: 100%;
     object-fit:cover;
-    height: 260px;
+    height: 270px;
     overflow: hidden;
 }
 /*mise en page du menu*/
@@ -70,16 +83,13 @@ body {
     border-radius: 2rem 2rem 0rem 0rem;
     padding-top:2rem;
 
+
     .title h1{
             font-size: 1.5em;
             padding-left: 1rem;
             } 
             .coeurpage{
-                cursor: pointer;
-                position: absolute;
-                top: 3%;
-                right:15%;   
-                font-size:1.5em;
+                @include coeur-page;
                 .fa-heart:hover{
                     font-weight: bold;
                     color:$color-primary;
@@ -89,23 +99,34 @@ body {
 } 
 
 /* card menu avec animation*/
+
 .menu-card{
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 
     h2 {
         padding: 1rem;
         padding-top:1rem;
+        padding-left: 0;
         font-size:1em;
         font-weight:200;
         padding-bottom: 0.2rem;
-        
-}
-    h4 {
         @extend %titremenusouligne;
+        @include desktop-only{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-bottom: 2px $color-tertiary solid;
+            width: 100%;  
+              
     }
+}
+
+/*placement desktop*/
+.animation1,.animation2,.animation3,.animation4{
+    @include desktop-only{
+        width: 70%;
+    }
+}
+
 
 .anim-title{
     animation-name:appartion-title;
@@ -120,21 +141,25 @@ body {
 .menu-desc{
     @include desc-card-page; 
     }
-    h3{  
-        position: relative;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size:1.2rem;
+
+    h3{ 
+        width: 100%;
+        font-size:1.2rem;   
     }
     p{
-        
-        overflow: hidden;
-        text-overflow: ellipsis;
+        width:100%;
         font-size:1.0rem;
         font-weight:lighter;
         padding-top:0.5rem;  
     }
+
+    h3,p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
     .price{
+        width: 10%;
         top:2.7rem;
         right:0.5rem;
         position: absolute;
@@ -165,6 +190,7 @@ body {
 }
 /* Appartion du menu */
 .animation1 {
+    
     animation-name: apparition;
     animation-duration: 1200ms;
     animation-delay: 150ms;
@@ -175,6 +201,7 @@ body {
 }
 
 .animation2{
+    
     animation-name: apparition2;
     animation-duration: 1200ms;
     animation-delay: 300ms; 
@@ -185,6 +212,7 @@ body {
 }
 
 .animation3{  
+
     animation-name: apparition3;
     animation-duration: 1200ms;
     animation-delay: 450ms; 
@@ -194,6 +222,7 @@ body {
     100%{opacity:1;}
 }
 .animation4 {
+    
     animation-name: apparition4;
     animation-duration: 1500ms;
     animation-delay: 600ms;
@@ -207,7 +236,13 @@ body {
 /*Validation*/
 .animation1:hover{ 
     cursor: pointer;
+        h3,p{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            
 
+        }
         .price{
             transform: translateX(-70px);
         }
@@ -219,7 +254,7 @@ body {
     }
 }
 .animation2:hover{ 
-    cursor: pointer;
+            cursor: pointer;
 
         .price{
             transform: translateX(-70px);
@@ -231,7 +266,7 @@ body {
         }
     }
 }.animation3:hover{ 
-    cursor: pointer;
+            cursor: pointer;
 
         .price{
             transform: translateX(-70px);

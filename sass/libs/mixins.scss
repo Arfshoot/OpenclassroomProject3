@@ -1,6 +1,8 @@
+@import "breakpoint.scss";
+
+
 /* style bouton*/
 @mixin bouton{
-    
     background: $color-primary;
     border:none;
     box-shadow: 0.6rem 0.6rem 1rem #bdbdbd;
@@ -20,11 +22,8 @@
         transform: scale(1.2);
         opacity: 0.7;
         box-shadow: 1rem 1rem 1rem #bdbdbd;
-        background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);
-        
+        background: linear-gradient(355deg, #4a4a9e 0%, #9356dc 10%, #ff79da 100%);    
     }
-    
-   
 }
 /*liste page acceuil*/
 @mixin cartouche {
@@ -40,16 +39,18 @@
     align-items: center;
     position: relative;
     box-shadow: 0 0.3rem 1rem #bdbdbd;
-    
-
+    @include desktop-only{
+        width: 25%;
+        padding:1rem;
+        font-size: 0.7em;  
+    }
    .card-logo {
     color: #7e7e7e;
     position: absolute;
     left: 12%;
    }
-   
 }
-
+/*numero sur les cartouches*/
 @mixin numero {
     background: $color-primary;
     border-radius: 100%;
@@ -62,6 +63,9 @@
     height:1.4rem;
     width: 1.4rem;
     font-size:0.8em;
+    @include desktop-only{
+        left: -4%;
+    }
     
 }
 /* menu page d'acceuil*/
@@ -69,10 +73,15 @@
     position: relative;
     background: white;
     width: 100%;
-    border-radius:10px;
+    border-radius:20px;
     margin-top:1rem;
     margin-bottom:1rem;
     overflow: hidden;
+    box-shadow: 0 0.3rem 1rem #bdbdbd;
+
+    @include desktop-only{
+        width: 40%;
+    }
     a{
         text-decoration: none;
     } 
@@ -112,14 +121,19 @@
     margin: 1rem;
     margin-bottom: 0;
     box-shadow: 0 0.3rem 1rem #bdbdbd;
-    
+    @include desktop-only{
+        display: block;
+        box-shadow: 0 0 5px $color-primary;
+    }
     h2{
         padding-bottom: 0.3rem;
         font-weight: bold;
         font-size:1.2em;
+ 
     }
 
 }
+/* encard nouveau*/
 @mixin new {
     a .new{ 
         color: rgb(209, 22, 22);
@@ -130,8 +144,24 @@
         padding:0.5rem;
         border-radius:0.2rem;
         color: $color-primarynew;
+        @include desktop-only{
+            animation-name: coeurquibat;
+            animation: transform  infinite repeat; 
+            animation-duration: 5000ms;
+            animation-iteration-count: infinite;
+            
+            
+        }
     }
 }
+@keyframes coeurquibat {
+    0% {transform:scale(1)}
+    25%{transform:scale(1.2)}
+    50%{transform:scale(1)}
+    75%{transform:scale(1.2)}
+    100%{transform:scale(1)}
+}
+/*coeur page d'acceuil*/
 @mixin coeur {
     .coeur{
         
@@ -144,30 +174,44 @@
         cursor: pointer;
         .fa-heart:hover{
             font-weight: bold;
-            color:$color-primary;
-            transition: color 1s ease-out;  
+            animation: color 850ms infinite linear alternate;
         }
-
     }
-
 }
+/*coeur page*/
+@mixin coeur-page {
 
-    
-
+        cursor: pointer;
+        position: absolute;
+        top: 3%;
+        right:15%;   
+        font-size:1.5em;
+        .fa-heart:hover{
+            font-weight: bold;
+            animation: color 850ms infinite linear alternate;
+        
+    }
+}
 
 /*style footer*/
 @mixin foot {
     .foot{
-        
         background:rgb(34, 34, 34);
         color: white;
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
         padding: 0.7rem;
-        
-            h3 {
+        @include desktop-only{
+            display: flex;
+            flex-direction: row;
+        }
+        h3 {
             padding:0.5rem;
+            @include desktop-only{
+                font-size:2em;
+                border: 1px solid white;
+            }
         }
         span{
             .fa-utensils{
@@ -184,7 +228,6 @@
            list-style-type: none;
             padding-left: 0.5rem;
             padding-top: 0.3rem;
-
         }
     }  
 }
