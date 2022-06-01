@@ -1,6 +1,7 @@
 @import "mixins.scss";
 @import "composants.scss";
 @import "breakpoint.scss";
+@import "animations.scss";
 
 *{
     box-sizing: border-box;
@@ -50,23 +51,6 @@ body {
     }
 }
 
-
-/*animation de la fleche*/
-
-.fa-arrow-left{
-    transform: scale(1);
-    transition-property: transform;
-    transition-duration:1500ms;
-
-}
-
-.fa-arrow-left:hover{
-    transform: scale(1.2);
-    font-weight: bold;
-    color:$color-primary;
-    transition: color 1500ms ;
- }
-
 .imgplat{
     margin-bottom:-30px;
     width: 100%;
@@ -82,26 +66,26 @@ body {
     background: $color-background2;
     border-radius: 2rem 2rem 0rem 0rem;
     padding-top:2rem;
-
-
+    
+    
     .title h1{
-            font-size: 1.5em;
-            padding-left: 1rem;
-            } 
-            .coeurpage{
-                @include coeur-page;
-                .fa-heart:hover{
-                    font-weight: bold;
-                    color:$color-primary;
-                    transition: color 1s ease-out;
-                }
-            }
+        font-size: 1.5em;
+        padding-left: 1rem;
+    } 
+    .coeurpage{
+        @include coeur-page;
+        .fa-heart:hover{
+            font-weight: bold;
+            color:$color-primary;
+            transition: color 1s ease-out;
+        }
+    }
 } 
 
-/* card menu avec animation*/
+/* card menu */
 
 .menu-card{
-
+    
     h2 {
         padding: 1rem;
         padding-top:1rem;
@@ -116,41 +100,33 @@ body {
             justify-content: center;
             border-bottom: 2px $color-tertiary solid;
             width: 100%;  
-              
+            
+        }
     }
-}
-
-/*placement desktop*/
-.animation1,.animation2,.animation3,.animation4{
-    @include desktop-only{
-        width: 70%;
+    
+    /*placement desktop*/
+    .animation1,.animation2,.animation3,.animation4{
+        @include desktop-only{
+            width: 70%;
+        }
     }
-}
-
-
-.anim-title{
-    animation-name:appartion-title;
-    animation-duration: 1s;
-    animation-duration: 800ms;
-}
-@keyframes appartion-title{
-    0%{opacity:0;}
-    100%{opacity:1;}
-}
-
-.menu-desc{
-    @include desc-card-page; 
+    /* gestion de la card menu avec le ellipsis*/
+    .menu-desc{
+        @include desc-card-page; 
+        .under-desc{
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+            line-height: 1.5em;
+        }
     }
-    .desc{
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
+    
     h3{ 
-        text-overflow: ellipsis;
         white-space: nowrap;
+        text-overflow: ellipsis;
         overflow: hidden;
-        font-size:1.2rem;   
+        font-size:1.2rem; 
+        padding-bottom: 0.2rem;  
     }
     p{
         text-overflow: ellipsis;
@@ -158,140 +134,40 @@ body {
         overflow: hidden;
         font-size:1.0rem;
         font-weight:lighter;
-        padding-top:0.5rem;  
+        margin:0;
+        
     }
-
-
+    span{
+        margin-right: 0.3rem;
+    }
     .price{
-        padding-left: 0.5rem;
-        top:2.7rem;
-        right:0.5rem;
-        position: absolute;
-        transform: translateX(0);
-        transition-property: transform;
-        transition-duration: 600ms;
-    } 
+        margin:0;
+    }
+    /* mise en place logo validation + animation*/
     .logo-check{
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-tertiary;
+        width: 50px;
+        height: 70px;
         position: absolute;
-        bottom:0%;
-        left:100%;
-        color:white;
-        font-size: 1.8em;
-        background-color:$color-tertiary;
-        padding: 1.2rem;
-        text-align: flex-start;
-        width:80px;
-        transform: translateX(0);
-        transition-property: transform;
-        transition-duration: 600ms;
-        i{
-            transform: rotate(0);
-            transition-property: transform;
-            transition-duration: 600ms;
+        padding: 20px;
+        right: -50px;
+        top: 0;
+        opacity: 0;
+        transition: transform 330ms ease-in-out;
+        & .fa-circle-check {
+            font-size: 1.5em;
+            color: #fff;
+            transition: transform 500ms ease-in-out;
         }
     }
-}
-/* Appartion du menu */
-.animation1 {
     
-    animation-name: apparition;
-    animation-duration: 1200ms;
-    animation-delay: 150ms;
-}
-@keyframes apparition{
-    0%{opacity: 0;}
-    100%{opacity:1;}
-}
-
-.animation2{
-    
-    animation-name: apparition2;
-    animation-duration: 1200ms;
-    animation-delay: 300ms; 
-}
-@keyframes apparition2{
-    0%{opacity: 0;}
-    100%{opacity:1;}
-}
-
-.animation3{  
-
-    animation-name: apparition3;
-    animation-duration: 1200ms;
-    animation-delay: 450ms; 
-}
-@keyframes apparition3{
-    0%{opacity: 0;}
-    100%{opacity:1;}
-}
-.animation4 {
-    
-    animation-name: apparition4;
-    animation-duration: 1500ms;
-    animation-delay: 600ms;
-}
-@keyframes apparition4{
-    0%{opacity: 0;}
-    100%{opacity:1;}
 }
 
 
-/*Validation*/
-.animation1:hover{ 
-    cursor: pointer;
 
-        .price{
-            transform: translateX(-70px);
-        }
-        .logo-check{
-            transform: translateX(-70px);
-        i{
-            transform: rotate(1turn);
-        }
-    }
-}
-.animation2:hover{ 
-            cursor: pointer;
-
-        .price{
-            transform: translateX(-70px);
-        }
-        .logo-check{
-            transform: translateX(-70px);
-        i{
-            transform: rotate(1turn);
-        }
-    }
-}.animation3:hover{ 
-            cursor: pointer;
-
-        .price{
-            transform: translateX(-70px);
-        }
-        .logo-check{
-            transform: translateX(-70px);
-        i{
-            transform: rotate(1turn);
-        }
-    }
-}
-.animation4:hover{ 
-    cursor: pointer;
-
-        .price{
-            transform: translateX(-70px);
-        }
-        .logo-check{
-            transform: translateX(-70px);
-        i{
-            transform: rotate(1turn);
-        }
-    }
-}
-
-
- 
 /*boutton*/
 .bouton-place{
     position: relative;
@@ -304,9 +180,8 @@ body {
         @include bouton;
         background:$bacgroud-color-button;
         margin-top:2rem;
- 
+        
     }
-
+    
 }
 @include foot;
-  

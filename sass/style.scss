@@ -23,7 +23,7 @@
 }
 body {
     width: 100%;
-
+    
 }
 
 header {
@@ -58,7 +58,7 @@ header {
         @include desktop-only{
             .fa-solid {
                 margin-right: 0.5rem;
-
+                
             }
             p{ margin-left: 0.5rem;}
         }
@@ -77,20 +77,20 @@ header {
         font-size:1.4em;
         font-weight:bold;
         padding-top: 2rem;
-;
+        ;
     }
     p {
         padding: 1rem;
         padding-top: 0.8rem;
         font-weight: lighter;
-
+        
     }
 }
 .button{
     
     @include bouton;
     background:$bacgroud-color-button;
-
+    
 }
 /* Cartouche*/
 .fonctionnement{
@@ -100,7 +100,7 @@ header {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-
+        
         
     }
 }
@@ -112,11 +112,11 @@ header {
         font-size:1em;
         
     }
-
+    
 }
 .cartouche {
     @include cartouche;
-
+    
     .num {
         @include numero;
     }
@@ -153,29 +153,22 @@ header {
         @include desktop-only{
             padding-top:1.5rem;
         }
-
+        
     }
     .card-resto{
         @include card-resto;
         @include new;
         @include coeur;
         @include desktop-only{
-        &:hover{
-            transform: scale(1.1);
-            box-shadow: 0 0.3rem 1rem $color-primary;
+            &:hover{
+                transform: scale(1.1);
+                box-shadow: 0 0.3rem 1rem $color-primary;
+            }
         }
-    }
-
-            
+        
+        
         
     }
 }
-.coeur:hover{
-    color: red;
-    background-color:red;
-}
-
-
 
 @include foot;
- 

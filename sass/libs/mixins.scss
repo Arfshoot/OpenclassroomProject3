@@ -1,4 +1,5 @@
 @import "breakpoint.scss";
+@import "animations.scss";
 
 
 /* style bouton*/
@@ -109,30 +110,36 @@
 
 /* carte menu mise en page*/
 @mixin desc-card-page {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-between;
-    overflow: hidden;
-    padding: 0.6rem;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 4px 4px 6px #aaa;
     position: relative;
-    background:white;
-    border-radius:1rem;
-    margin: 1rem;
-    margin-bottom: 0;
-    box-shadow: 0 0.3rem 1rem #bdbdbd;
-    @include desktop-only{
-        display: block;
-        box-shadow: 0 0 5px $color-primary;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: padding-right 450ms ease-in-out;
+    &:hover {
+      padding-right: 60px;
     }
+    &:hover .logo-check {
+      opacity: 1;
+      transform: translate(-50px);
+    }
+    &:hover .fa-circle-check {
+      transform: rotate(360deg) ;
+    }
+  }
+
     h2{
         padding-bottom: 0.3rem;
         font-weight: bold;
         font-size:1.2em;
- 
     }
 
-}
+
 /* encard nouveau*/
 @mixin new {
     a .new{ 
@@ -175,7 +182,9 @@
         .fa-heart:hover{
             font-weight: bold;
             color:$color-primary;
-            animation: color 850ms  linear ;
+            animation: color;
+            animation-name: coloropacity;
+            animation-duration: 2000ms;
         }
     }
 }
@@ -190,7 +199,9 @@
         .fa-heart:hover{
             font-weight: bold;
             color:$color-primary;
-            animation: color 850ms linear;
+            animation: color;
+            animation-name: coloropacity;
+            animation-duration: 2000ms;
         
     }
 }

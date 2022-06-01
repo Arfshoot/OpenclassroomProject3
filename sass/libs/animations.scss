@@ -1,0 +1,78 @@
+/*Animation titre menu 'entrée/plat/dessert*/
+.anim-title{
+    animation-name:appartion-title;
+    animation-duration: 1s;
+    animation-duration: 800ms;
+}
+@keyframes appartion-title{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+/*Appartion de la liste du menu*/ 
+.animation1 {
+    
+    animation-name: apparition;
+    animation-duration: 1200ms;
+    animation-delay: 150ms;
+}
+@keyframes apparition{
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+
+.animation2{
+    
+    animation-name: apparition2;
+    animation-duration: 1200ms;
+    animation-delay: 300ms; 
+}
+@keyframes apparition2{
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+
+.animation3{  
+
+    animation-name: apparition3;
+    animation-duration: 1200ms;
+    animation-delay: 450ms; 
+}
+@keyframes apparition3{
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+.animation4 {
+    
+    animation-name: apparition4;
+    animation-duration: 1500ms;
+    animation-delay: 600ms;
+}
+@keyframes apparition4{
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+
+/*animation de la fleche retour acceuil*/
+
+.fa-arrow-left{
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration:1500ms;
+
+}
+
+.fa-arrow-left:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+    color:$color-primary;
+    transition: color 1500ms ;
+ }
+
+
+ /*Animation du coeur*/
+ @keyframes coloropacity{
+     0%{opacity: 0;}
+     50%{opacity: 0.5}
+     100%{opacity: 1}
+ }
