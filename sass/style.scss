@@ -104,7 +104,7 @@ header {
         
     }
 }
-.fonctionnement h1{
+.fonctionnement h4{
     padding:0.8rem;
     padding-top:2rem;
     @include desktop-only{
@@ -148,7 +148,7 @@ header {
         }
         
     }
-    h1{
+    h4{
         padding-top: 3rem;
         @include desktop-only{
             padding-top:1.5rem;

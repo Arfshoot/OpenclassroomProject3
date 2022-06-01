@@ -114,8 +114,8 @@
     align-items: center;
     justify-content:space-between;
     overflow: hidden;
-    position: relative;
     padding: 0.6rem;
+    position: relative;
     background:white;
     border-radius:1rem;
     margin: 1rem;
@@ -174,7 +174,8 @@
         cursor: pointer;
         .fa-heart:hover{
             font-weight: bold;
-            animation: color 850ms infinite linear alternate;
+            color:$color-primary;
+            animation: color 850ms  linear ;
         }
     }
 }
@@ -188,7 +189,8 @@
         font-size:1.5em;
         .fa-heart:hover{
             font-weight: bold;
-            animation: color 850ms infinite linear alternate;
+            color:$color-primary;
+            animation: color 850ms linear;
         
     }
 }

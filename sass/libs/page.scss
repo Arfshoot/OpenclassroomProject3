@@ -141,25 +141,29 @@ body {
 .menu-desc{
     @include desc-card-page; 
     }
-
+    .desc{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
     h3{ 
-        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         font-size:1.2rem;   
     }
     p{
-        width:100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         font-size:1.0rem;
         font-weight:lighter;
         padding-top:0.5rem;  
     }
 
-    h3,p{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
+
     .price{
-        width: 10%;
+        padding-left: 0.5rem;
         top:2.7rem;
         right:0.5rem;
         position: absolute;
@@ -236,13 +240,7 @@ body {
 /*Validation*/
 .animation1:hover{ 
     cursor: pointer;
-        h3,p{
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            
 
-        }
         .price{
             transform: translateX(-70px);
         }
