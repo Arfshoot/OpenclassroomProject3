@@ -37,6 +37,7 @@
   animation-name: apparition;
   animation-duration: 1200ms;
   animation-delay: 150ms;
+  animation-fill-mode: both;
 }
 
 @keyframes apparition {
@@ -48,6 +49,7 @@
   }
 }
 .animation2 {
+  animation-fill-mode: both;
   animation-name: apparition2;
   animation-duration: 1200ms;
   animation-delay: 300ms;
@@ -62,6 +64,7 @@
   }
 }
 .animation3 {
+  animation-fill-mode: both;
   animation-name: apparition3;
   animation-duration: 1200ms;
   animation-delay: 450ms;
@@ -76,6 +79,7 @@
   }
 }
 .animation4 {
+  animation-fill-mode: both;
   animation-name: apparition4;
   animation-duration: 1500ms;
   animation-delay: 600ms;
@@ -167,6 +171,7 @@ h2 {
   animation-name: apparition;
   animation-duration: 1200ms;
   animation-delay: 150ms;
+  animation-fill-mode: both;
 }
 
 @keyframes apparition {
@@ -178,6 +183,7 @@ h2 {
   }
 }
 .animation2 {
+  animation-fill-mode: both;
   animation-name: apparition2;
   animation-duration: 1200ms;
   animation-delay: 300ms;
@@ -192,6 +198,7 @@ h2 {
   }
 }
 .animation3 {
+  animation-fill-mode: both;
   animation-name: apparition3;
   animation-duration: 1200ms;
   animation-delay: 450ms;
@@ -206,6 +213,7 @@ h2 {
   }
 }
 .animation4 {
+  animation-fill-mode: both;
   animation-name: apparition4;
   animation-duration: 1500ms;
   animation-delay: 600ms;
@@ -313,6 +321,7 @@ h2 {
   animation-name: apparition;
   animation-duration: 1200ms;
   animation-delay: 150ms;
+  animation-fill-mode: both;
 }
 
 @keyframes apparition {
@@ -324,6 +333,7 @@ h2 {
   }
 }
 .animation2 {
+  animation-fill-mode: both;
   animation-name: apparition2;
   animation-duration: 1200ms;
   animation-delay: 300ms;
@@ -338,6 +348,7 @@ h2 {
   }
 }
 .animation3 {
+  animation-fill-mode: both;
   animation-name: apparition3;
   animation-duration: 1200ms;
   animation-delay: 450ms;
@@ -352,6 +363,7 @@ h2 {
   }
 }
 .animation4 {
+  animation-fill-mode: both;
   animation-name: apparition4;
   animation-duration: 1500ms;
   animation-delay: 600ms;
@@ -510,6 +522,9 @@ body {
     border-bottom: 2px #99e2d0 solid;
     width: 100%;
   }
+}
+.menu-card .animation1, .menu-card .animation2, .menu-card .animation3, .menu-card .animation4 {
+  opacity: 0;
 }
 @media screen and (min-width: 992px) {
   .menu-card .animation1, .menu-card .animation2, .menu-card .animation3, .menu-card .animation4 {
@@ -692,7 +707,6 @@ body {
     overflow: hidden;
   }
 }
-/*icon loading*/
 /* text loading */
 .loading span {
   background: transparent;
@@ -973,7 +987,6 @@ header .recherche p {
 @media screen and (min-width: 992px) {
   .list-resto .card-resto a .new {
     animation-name: coeurquibat;
-    animation: transform infinite repeat;
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
   }

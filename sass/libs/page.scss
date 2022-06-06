@@ -106,6 +106,7 @@ body {
     
     /*placement desktop*/
     .animation1,.animation2,.animation3,.animation4{
+        opacity: 0;
         @include desktop-only{
             width: 70%;
         }
@@ -113,6 +114,8 @@ body {
     /* gestion de la card menu avec le ellipsis*/
     .menu-desc{
         @include desc-card-page; 
+        
+
         .under-desc{
             display:flex;
             justify-content:space-between;
@@ -166,8 +169,6 @@ body {
     
 }
 
-
-
 /*boutton*/
 .bouton-place{
     position: relative;
@@ -179,8 +180,7 @@ body {
         width: 50%;
         @include bouton;
         background:$bacgroud-color-button;
-        margin-top:2rem;
-        
+        margin-top:2rem; 
     }
     
 }

@@ -15,6 +15,7 @@
     animation-name: apparition;
     animation-duration: 1200ms;
     animation-delay: 150ms;
+    animation-fill-mode: both;
 }
 @keyframes apparition{
     0%{opacity: 0;}
@@ -22,7 +23,7 @@
 }
 
 .animation2{
-    
+    animation-fill-mode: both;
     animation-name: apparition2;
     animation-duration: 1200ms;
     animation-delay: 300ms; 
@@ -33,7 +34,7 @@
 }
 
 .animation3{  
-
+    animation-fill-mode: both;
     animation-name: apparition3;
     animation-duration: 1200ms;
     animation-delay: 450ms; 
@@ -43,7 +44,7 @@
     100%{opacity:1;}
 }
 .animation4 {
-    
+    animation-fill-mode: both;
     animation-name: apparition4;
     animation-duration: 1500ms;
     animation-delay: 600ms;
